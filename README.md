@@ -1,2 +1,2 @@
 # undercover
-Quick iplementation of undercover game
+Quick implementation of undercover game in VueJS (nuxt)
