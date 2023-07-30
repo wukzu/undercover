@@ -1,6 +1,10 @@
 export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
+  server: {
+    port: 6800, // default: 3000
+  },
+
   head: {
     title: 'undercover',
     htmlAttrs: {
