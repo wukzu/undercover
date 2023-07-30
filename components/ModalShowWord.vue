@@ -6,7 +6,7 @@
         Ton mot c'est
       </header>
 
-      <section class="modal-body">
+      <section class="modal-body"  style="text-align: center;">
         {{ word == '' ? 'Mr White Hat :)' : word }}
        </section>
 
@@ -50,6 +50,7 @@
   }
 
   .modal {
+    width: 70%;
     background: #FFFFFF;
     box-shadow: 2px 2px 20px 1px;
     overflow-x: auto;
@@ -61,6 +62,7 @@
   .modal-footer {
     padding: 15px;
     display: flex;
+    font-size: 1.2rem;
   }
 
   .modal-header {
@@ -79,6 +81,7 @@
   .modal-body {
     position: relative;
     padding: 20px 10px;
+    font-size: 2.5rem;
   }
 
   .btn-close {
@@ -99,5 +102,7 @@
     background: #4AAE9B;
     border: 1px solid #4AAE9B;
     border-radius: 2px;
+    padding-top: 7px;
+    padding-bottom: 7px;
   }
 </style>

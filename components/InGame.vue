@@ -5,14 +5,22 @@
     - {{ undercoverNumber }} Undercover(s) <br>
     - {{ misterWhiteNumber }} misterwhite(s) <br> <br>
 
-    <div class="name-to-play" style="text-align: center;">
-      {{ currentPlayerName }}, <br>   à toi de jouer 😏
+    <div class="name-to-play" style="text-align: center;" v-if="numberPlayer <= peopleNumber">
+      <b> {{ currentPlayerName }}</b>, <br>   à toi de jouer 😏
     </div>
 
     <!-- A CHAQUE TOUR : JOUEUR 1/2/3/4 vois sa carte  ! -->
 
-    <v-btn variant="tonal" @click="startGame" v-if="numberPlayer <= peopleNumber">
-      Tirer une carte
+    <v-btn variant="tonal" @click="startGame" v-if="numberPlayer <= peopleNumber" style="width: 100%; margin-top: 2rem;" elevation="2"
+  x-large
+>
+      <b>Tirer une carte</b>
+    </v-btn>
+    <v-btn depressed
+      color="error" @click="deleteGame" v-else style="width: 100%; margin-top: 2rem; background: red;" elevation="2"
+  x-large
+>
+      <b>Recommencer</b>
     </v-btn>
       
     <ModalShowWord 
@@ -84,6 +92,31 @@ export default {
   },
 
   methods: {
+    deleteGame() {
+      console.log("dete gameeee")
+
+      this.gameStarted= false
+
+      this.modalName= false
+      this.numberPlayer= 1
+
+      this.modalShowWord= false
+
+      this.randomFaciess= null
+
+      this.orders= null
+
+      this.word= ''
+
+      this.words= words
+
+      this.finalWordForPlayer= null
+      this.finalWordForUnder= null
+      
+      this.randomFaciess = this.getRandomFaciess()
+
+      this.getFinalWords()
+    },
     getFinalWords() {
       console.log("wrs ", words.words.length, this.words)
       console.log("words length :", this.words.lenth)
